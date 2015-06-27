@@ -1,6 +1,9 @@
 <?php 
 class WebCrawler{
-	function crawler{
+	
+	function crawler(){		
+		require_once 'math/formulas.php';
+		$fMath = new ForMath();
 		$username = "marcus_ultimate@hotmail.com";
 		$password = "m.ultime987";
 
@@ -11,7 +14,7 @@ class WebCrawler{
 		//$path = build_unique_path($dir);
 
 		//login form action url
-		$url="https://loginfree.globo.com/login/438"; 
+		$url="https://loginfree.globo.com/login/438";
 		$postinfo = "login-passaporte=".$username."&senha-passaporte=".$password;
 
 		$cookie_file_path = "cookie.txt";
@@ -42,25 +45,26 @@ class WebCrawler{
 		for($x = 1; $x <= 41; $x++)
 		{
 			curl_setopt($ch, CURLOPT_URL, "http://cartolafc.globo.com/mercado/filtrar.json?page=$x"); //Pagina com filtro de jogadores
-			$html = curl_exec($ch);
-			$jsonObj = json_decode($html);
+			$json = curl_exec($ch);
+			$jsonObj = json_decode($json);
 			$atleta = $jsonObj->atleta;
 			
-			foreach ($atleta as $atl ) 
+			foreach ($atleta as $atl) 
 			{ 
 				curl_setopt($ch, CURLOPT_URL, "http://cartolafc.globo.com/atleta/$atl->id/evolucao/5rodadas.json"); //Médias 5 rodadas
 				//--------------------------
 				$evolucao = curl_exec($ch);
 				$medias = json_decode($evolucao);
-				
+				$proximaPontuacao = $fMath->projecaoDePontuacao($medias);		
 				$partidasJogadas = count($medias);
 				$valorizacao = 0.0;
 				if (!$partidasJogadas == 0)
-					$valorizacao = $proximaPontuacao - $medias->medias[0];
+					$valorizacao = $fMath->previsaoDePontuacao($proximaPontuacao, $medias);
 				//--------------------------
 				
 				$posicao = $atl->posicao;
 				$clube = $atl->clube;
+				//echo $json;
 				echo "Id: $atl->id - Apelido: $atl->apelido - Posição: ".$positions[($posicao->id) - 1]." - Preço: $atl->preco - Status: $atl->status - Clube: $clube->nome - Pontuação esperada: $proximaPontuacao - Valorização: $valorizacao <br> "; 
 			}
 
@@ -70,6 +74,9 @@ class WebCrawler{
 		//do stuff with the info with DomDocument() etc
 
 		curl_close($ch);
-	}	
+	}		
 }
+
+$callCrawler = new WebCrawler();
+$callCrawler->crawler();
 ?>

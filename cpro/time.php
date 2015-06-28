@@ -291,7 +291,7 @@
                 <li class="active"><a href="time.php"><i class="fa fa-circle-o"></i> Meu time</a></li>
               </ul>
               <ul class="treeview-menu">
-                <li><a href="index.php"><i class="fa fa-circle-o"></i> Jogadores</a></li>
+                <li><a href="index.php"><i class="fa fa-circle-o"></i> Mercado</a></li>
               </ul>			  
             </li>            
           </ul>
@@ -318,7 +318,7 @@
           <!-- Default box -->
           <div class="box">
             <div class="box-header with-border">
-              <h2 class="box-title"><strong>  Resumo de jogadores</strong></h2>
+              <h2 class="box-title"><strong>  Resumo do time</strong></h2>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
                 <!--<button class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>-->

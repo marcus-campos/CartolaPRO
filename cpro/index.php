@@ -296,7 +296,7 @@
                 <i class="fa fa-book"></i> <span>Opções</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="index.php"><i class="fa fa-circle-o"></i> Jogadores</a></li>
+                <li class="active"><a href="index.php"><i class="fa fa-circle-o"></i> Mercado</a></li>
               </ul>
 			  <ul class="treeview-menu">
                 <li><a href="time.php"><i class="fa fa-circle-o"></i> Meu time</a></li>
@@ -326,7 +326,7 @@
           <!-- Default box -->
           <div class="box">
             <div class="box-header with-border">
-              <h2 class="box-title"><strong>  Resumo de jogadores</strong></h2>
+              <h2 class="box-title"><strong>  Resumo do mercado de jogadores</strong></h2>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
                 <!--<button class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>-->
@@ -334,7 +334,12 @@
             </div>
 			<div class="box">                    
 				<div class="box-body">		
-					<span id="jogadores"><center><img src="dist/img/spinner.gif" /></center></span> <!-- DATA TABLE TIME -->
+					<span id="jogadores">
+						<center>
+							<strong>Aguarde, estamos avaliando o mercado atual...</strong><br />
+							<img src="dist/img/spinner.gif" />
+						</center>
+					</span> <!-- DATA TABLE TIME -->
 				</div><!-- /.box-body -->
 			</div><!-- /.box -->	
         </section><!-- /.content -->

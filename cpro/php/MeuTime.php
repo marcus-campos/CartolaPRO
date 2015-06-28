@@ -70,11 +70,14 @@ class MeuTime{
 			//--------------------------
 			$evolucao = curl_exec($ch);
 			$medias = json_decode($evolucao);
-			$proximaPontuacao = $fMath->projecaoDePontuacao($medias);		
+			$proximaPontuacao = $fMath->projecaoDePontuacao($medias);
+			$proximaPontuacao = number_format($proximaPontuacao, 2, '.', ',');			
 			$partidasJogadas = count($medias);
 			$valorizacao = 0.0;
 			if (!$partidasJogadas == 0)
 				$valorizacao = $fMath->previsaoDePontuacao($proximaPontuacao, $medias);
+			
+			$valorizacao = number_format($valorizacao, 2, '.', ',');
 			//--------------------------
 			
 			$posicao = $atl->posicao;

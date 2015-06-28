@@ -43,7 +43,7 @@ class MeuTime{
 
 		$positions = array("GOL", "LAT", "ZAG", "MEI", "ATA", "TEC");
 		?>
-			<table id="jogadores" class="table table-bordered table-striped">
+			<table id="meuTime" class="table table-bordered table-striped">
 				<thead>
 				  <tr>
 					<th>ID</th>

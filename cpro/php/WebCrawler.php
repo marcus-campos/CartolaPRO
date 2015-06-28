@@ -54,7 +54,7 @@ class WebCrawler {
 					<th>Status</th>
 					<th>Clube</th>
 					<th>Pontuacao esperada</th>
-					<th>Valorizacao</th>
+					<th>Valorizacao esperada</th>
 				  </tr>
 				</thead>
 				<tbody>  
@@ -115,7 +115,7 @@ class WebCrawler {
 				<th>Status</th>
 				<th>Clube</th>
 				<th>Pontuacao esperada</th>
-				<th>Valorizacao</th>
+				<th>Valorizacao esperada</th>
 			</tfoot>
 		</table>
 		<?php

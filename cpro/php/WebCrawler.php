@@ -1,11 +1,12 @@
 <?php 
-class WebCrawler{
-	
-	function crawler(){		
+session_start();
+
+class WebCrawler {	
+	public function crawler(){		
 		require_once 'math/formulas.php';
 		$fMath = new ForMath();
-		$username = "marcus_ultimate@hotmail.com";
-		$password = "m.ultime987";
+		$username = $_SESSION['login'];
+		$password = $_SESSION['senha'];
 
 		//set the directory for the cookie using defined document root var
 		//$dir = "C:\wamp\www";
@@ -43,20 +44,20 @@ class WebCrawler{
 
 		$positions = array("GOL", "LAT", "ZAG", "MEI", "ATA", "TEC");
 		?>
-			<table id="jogadores" class="table table-bordered table-striped">
-						<thead>
-						  <tr>
-							<th>ID</th>
-							<th>Apelido</th>
-							<th>Posição</th>
-							<th>Preço</th>
-							<th>Status</th>
-							<th>Clube</th>
-							<th>Pontuação esperada</th>
-							<th>Valorização</th>
-						  </tr>
-						</thead>
-						<tbody>  
+			<table id="dtJogadores" class="table table-bordered table-striped">
+				<thead>
+				  <tr>
+					<th>ID</th>
+					<th>Apelido</th>
+					<th>Posicao</th>
+					<th>Preco</th>
+					<th>Status</th>
+					<th>Clube</th>
+					<th>Pontuacao esperada</th>
+					<th>Valorizacao</th>
+				  </tr>
+				</thead>
+				<tbody>  
 
 		<?php
 		for($x = 1; $x <= 41; $x++)
@@ -72,11 +73,14 @@ class WebCrawler{
 				//--------------------------
 				$evolucao = curl_exec($ch);
 				$medias = json_decode($evolucao);
-				$proximaPontuacao = $fMath->projecaoDePontuacao($medias);		
+				$proximaPontuacao = $fMath->projecaoDePontuacao($medias);	
+				$proximaPontuacao = number_format($proximaPontuacao, 2, '.', ',');
 				$partidasJogadas = count($medias);
 				$valorizacao = 0.0;
 				if (!$partidasJogadas == 0)
 					$valorizacao = $fMath->previsaoDePontuacao($proximaPontuacao, $medias);
+				
+				$valorizacao = number_format($valorizacao, 2, '.', ',');
 				//--------------------------
 				
 				$posicao = $atl->posicao;
@@ -104,14 +108,14 @@ class WebCrawler{
 		?>
 			</tbody>
 			<tfoot>
-			  <th>ID</th>
+				<th>ID</th>
 				<th>Apelido</th>
-				<th>Posição</th>
-				<th>Preço</th>
+				<th>Posicao</th>
+				<th>Preco</th>
 				<th>Status</th>
 				<th>Clube</th>
-				<th>Pontuação esperada</th>
-				<th>Valorização</th>
+				<th>Pontuacao esperada</th>
+				<th>Valorizacao</th>
 			</tfoot>
 		</table>
 		<?php
@@ -120,6 +124,9 @@ class WebCrawler{
 		//do stuff with the info with DomDocument() etc
 
 		curl_close($ch);
-	}		
+	}
 }
+
+$callCrawler = new WebCrawler();
+$callCrawler->crawler();
 ?>

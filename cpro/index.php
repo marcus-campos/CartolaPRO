@@ -1,12 +1,16 @@
 <?php
-	require_once 'php/analizador.php';	
-	$callCrawler = new WebCrawler();
+	session_start();
+	if(!(isset($_SESSION['login']) && $_SESSION['login'] != NULL && $_SESSION['senha'] && $_SESSION['senha'] != NULL))
+	{
+		header("Location: ../");	
+	}
+	
 ?>
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="iso-8859-1">
-    <title>MedStock | By: Marcus Vinicius Campos</title>
+    <meta charset="utf-8">
+    <title>CartolaPRO | By: Marcus Vinicius Campos</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -248,37 +252,8 @@
                   <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
                   <span class="hidden-xs">Alexander Pierce</span>
                 </a>-->
-                <ul class="dropdown-menu">
-                  <!-- User image -->
-                  <li class="user-header">
-                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
-                    <p>
-                      Alexander Pierce - Web Developer
-                      <small>Member since Nov. 2012</small>
-                    </p>
-                  </li>
-                  <!-- Menu Body -->
-                  <li class="user-body">
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Followers</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Sales</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Friends</a>
-                    </div>
-                  </li>
-                  <!-- Menu Footer-->
-                  <li class="user-footer">
-                    <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Profile</a>
-                    </div>
-                    <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                    </div>
-                  </li>
-                </ul>
+				<a href="php/logout.php" class="btn btn-danger">Sair</a>
+
               </li>
               <!-- Control Sidebar Toggle Button -->
               <li>
@@ -321,7 +296,10 @@
                 <i class="fa fa-book"></i> <span>Opções</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="index.php"><i class="fa fa-circle-o"></i> Estoque</a></li>
+                <li class="active"><a href="index.php"><i class="fa fa-circle-o"></i> Jogadores</a></li>
+              </ul>
+			  <ul class="treeview-menu">
+                <li><a href="time.php"><i class="fa fa-circle-o"></i> Meu time</a></li>
               </ul>
             </li>            
           </ul>
@@ -337,8 +315,8 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            MedStock
-            <small>resumo de tudo que existe no estoque de medicina do centro de simulação</small>
+            CartolaPRO
+            <small>projeção e valorização de jogadores</small>
           </h1>          
         </section>
 
@@ -348,15 +326,15 @@
           <!-- Default box -->
           <div class="box">
             <div class="box-header with-border">
-              <h2 class="box-title"><img width=55px height=55px src="dist/img/pucminas.png" /><strong>  Resumo de estoque</strong></h2>
+              <h2 class="box-title"><strong>  Resumo de jogadores</strong></h2>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
                 <!--<button class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>-->
               </div>
             </div>
 			<div class="box">                    
-				<div class="box-body">				
-					<?php $callCrawler->crawler(); ?>	
+				<div class="box-body">		
+					<span id="jogadores"><center><img src="dist/img/spinner.gif" /></center></span> <!-- DATA TABLE TIME -->
 				</div><!-- /.box-body -->
 			</div><!-- /.box -->	
         </section><!-- /.content -->
@@ -374,22 +352,9 @@
     <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <!-- Bootstrap 3.3.2 JS -->
     <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-	<!-- DATA TABES SCRIPT -->
+	<!-- DATA TABES SCRIPT -->	
     <script src="plugins/datatables/jquery.dataTables.min.js" type="text/javascript"></script>
-    <script src="plugins/datatables/dataTables.bootstrap.min.js" type="text/javascript"></script>
-	
-	<script type="text/javascript">
-      $(function () {
-        $('#jogadores').dataTable({
-          "bPaginate": true,
-          "bLengthChange": false,
-          "bFilter": true,
-          "bSort": true,
-          "bInfo": true,
-          "bAutoWidth": false
-        });
-      });
-    </script>
+    <script src="plugins/datatables/dataTables.bootstrap.min.js" type="text/javascript"></script>	
 	
     <!-- FastClick -->
     <script src='plugins/fastclick/fastclick.min.js'></script>
@@ -411,7 +376,8 @@
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js" type="text/javascript"></script>
 	
-	 <!-- page script -->
+	
+	<script src="dist/js/jscript.js" type="text/javascript"></script>
     
   </body>
 </html>

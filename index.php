@@ -43,9 +43,10 @@
     <![endif]-->
   </head>
   <body class="login-page">
+	<?php include_once("cpro/php/analyticstracking.php") ?>
     <div class="login-box">
       <div class="login-logo">
-        <a href=""><b>Cartola</b>PRO</a>
+        <a href="#"><b><img src ="cpro/dist/img/prologo.png" width="150px" height="75px"/></b></a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
         <p class="login-box-msg">Digite o seu login e senha do CartolaFC</p>
@@ -67,8 +68,21 @@
             </div><!-- /.col -->
           </div>
         </form> 
-      </div><!-- /.login-box-body -->
+		<br />
+		<p class="login-box-msg">Atenção!!! Não armazenamos suas credenciais de acesso ao CartolaFC em nossos servidores.</p>
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- CartolaPRO -->
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-1008275499671248"
+			 data-ad-slot="6989535413"
+			 data-ad-format="auto"></ins>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	  </div><!-- /.login-box-body -->	  
     </div><!-- /.login-box -->
+	
 
     <!-- jQuery 2.1.4 -->
     <script src="cpro/plugins/jQuery/jQuery-2.1.4.min.js"></script>

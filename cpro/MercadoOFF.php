@@ -3,7 +3,8 @@
 	if(!(isset($_SESSION['login']) && $_SESSION['login'] != NULL && $_SESSION['senha'] && $_SESSION['senha'] != NULL))
 	{
 		header("Location: ../");	
-	}	
+	}
+	
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,7 +36,6 @@
     <![endif]-->
   </head>
   <body class="skin-blue sidebar-mini sidebar-collapse">
-  <?php include_once("php/analyticstracking.php") ?>
     <div class="wrapper">
 
       <header class="main-header">
@@ -43,7 +43,7 @@
         <!-- Logo -->
         <a href="index.php" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><img src ="dist/img/prologo.png" width="45px" height="25px"/></span>
+          <span class="logo-mini"><b>C</b>PRO</span>
           <!-- logo for regular state and mobile devices -->
           <span class="logo-lg"><b>Cartola</b>PRO</span>
         </a>
@@ -248,7 +248,12 @@
               </li>
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
+                <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
+                  <span class="hidden-xs">Alexander Pierce</span>
+                </a>-->
 				<a href="php/logout.php" class="btn btn-danger">Sair</a>
+
               </li>
               <!-- Control Sidebar Toggle Button -->
               <li>
@@ -290,12 +295,12 @@
               <a href="#">
                 <i class="fa fa-book"></i> <span>Opções</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
-			  <ul class="treeview-menu">
-                <li class="active"><a href="time.php"><i class="fa fa-circle-o"></i> Meu time</a></li>
-              </ul>
               <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> Mercado - Em Breve</a></li>
-              </ul>			  
+                <li class="active"><a href="index.php"><i class="fa fa-circle-o"></i> Mercado</a></li>
+              </ul>
+			  <ul class="treeview-menu">
+                <li><a href="time.php"><i class="fa fa-circle-o"></i> Meu time</a></li>
+              </ul>
             </li>            
           </ul>
         </section>
@@ -321,50 +326,30 @@
           <!-- Default box -->
           <div class="box">
             <div class="box-header with-border">
-              <h2 class="box-title"><strong>  Resumo do time</strong></h2>
+              <h2 class="box-title"><strong>  Resumo do mercado de jogadores</strong></h2>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
                 <!--<button class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>-->
               </div>
             </div>
 			<div class="box">                    
-				<div class="box-body">				
-					<span id="time_jogadores">
+				<div class="box-body">		
+					<span id="mercado_jogadores">
 						<center>
-							<strong>Aguarde, estamos avaliando o seu time...</strong><br />
+							<strong>Aguarde, estamos avaliando o mercado atual...</strong><br />
 							<img src="dist/img/spinner.gif" />
 						</center>
-						<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-						<!-- CartolaPRO -->
-						<ins class="adsbygoogle"
-							 style="display:block"
-							 data-ad-client="ca-pub-1008275499671248"
-							 data-ad-slot="6989535413"
-							 data-ad-format="auto"></ins>
-						<script>
-						(adsbygoogle = window.adsbygoogle || []).push({});
-						</script>
-					</span>
-					<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-					<!-- CartolaPRO -->
-					<ins class="adsbygoogle"
-						 style="display:block"
-						 data-ad-client="ca-pub-1008275499671248"
-						 data-ad-slot="6989535413"
-						 data-ad-format="auto"></ins>
-					<script>
-						(adsbygoogle = window.adsbygoogle || []).push({});
-					</script>
+					</span> <!-- DATA TABLE TIME -->
 				</div><!-- /.box-body -->
 			</div><!-- /.box -->	
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->        
 
 	<footer class="main-footer">
-        <!--<div class="pull-right hidden-xs">
+        <div class="pull-right hidden-xs">
           <b>Email: </b> MARCUS_VINICIUS_CAMPOS@HOTMAIL.COM
-        </div>-->
-        <strong>CartolaPRO V.0.1.0 - Desenvolvido por <a href="https://github.com/marcus210">Marcus Campos</a>.</strong>
+        </div>
+        <strong>CartolaPRO V.0.1.0 - Desenvolvido por <a href="#">Marcus Vinícius Campos</a>.</strong>
     </footer>     
     </div><!-- ./wrapper -->
 
@@ -372,22 +357,9 @@
     <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <!-- Bootstrap 3.3.2 JS -->
     <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-	<!-- DATA TABES SCRIPT -->
+	<!-- DATA TABES SCRIPT -->	
     <script src="plugins/datatables/jquery.dataTables.min.js" type="text/javascript"></script>
-    <script src="plugins/datatables/dataTables.bootstrap.min.js" type="text/javascript"></script>
-	
-	<script type="text/javascript">
-      $(function () {
-        $('#meuTime').dataTable({
-          "bPaginate": false,
-          "bLengthChange": false,
-          "bFilter": true,
-          "bSort": true,
-          "bInfo": true,
-          "bAutoWidth": false
-        });
-      });
-    </script>
+    <script src="plugins/datatables/dataTables.bootstrap.min.js" type="text/javascript"></script>	
 	
     <!-- FastClick -->
     <script src='plugins/fastclick/fastclick.min.js'></script>
@@ -408,6 +380,7 @@
 
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js" type="text/javascript"></script>
+	
 	
 	<script src="dist/js/jscript.js" type="text/javascript"></script>
     

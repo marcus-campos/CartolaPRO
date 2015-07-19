@@ -400,7 +400,20 @@
 				</div><!-- /.box-body -->
 			</div><!-- /.box -->	
         </section><!-- /.content -->
-      </div><!-- /.content-wrapper -->        
+         <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.4&appId=1550925368505154";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+        </script>        
+        <center>
+          <div class="fb-comments" data-href="http://cartolapro.com.br/cpro/mercado.php" data-numposts="11"></div>
+        </center>
+      </div><!-- /.content-wrapper -->
+
 
 	<footer class="main-footer">
         <div class="pull-right hidden-xs">

@@ -63,14 +63,29 @@
             <div class="col-xs-8">    
                                   
             </div><!-- /.col -->
-            <div class="col-xs-4">
+            <div class="col-xs-4">              
               <button type="submit" name="entrar" class="btn btn-primary btn-block btn-flat">Entrar</button>
             </div><!-- /.col -->
           </div>
         </form> 
 		<br />
 		<p class="login-box-msg">Atenção!!! Não armazenamos suas credenciais de acesso ao CartolaFC em nossos servidores.</p>
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <p class="login-box-msg">Para se registrar no CartolaFC acesse o site globo.com ou<a href="https://login.globo.com/cadastro/4728?tam=widget&url=https%3A%2F%2Fintervencao.globo.com%2Fintervencoes%2Fshow.do%3Fpopin%3Dtrue%26servicoId%3D4728%26urlIntervencao%3Dhttp%3A%2F%2Fs.glbimg.com%2Fgl%2Fba%2Fbarra-globocom.callback.html%2523http%253A%252F%252Fgloboesporte.globo.com%252Fcartola-fc%252F"> clique aqui.</a></p>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.4&appId=1550925368505154";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <center>        
+        <div class="fb-share-button" data-href="http://cartolapro.com.br/" data-layout="button_count"></div>
+        <div class="fb-send" data-href="http://cartolapro.com.br/"></div>
+        <div class="fb-like"></div>
+    </center>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
 		<!-- CartolaPRO -->
 		<ins class="adsbygoogle"
 			 style="display:block"
@@ -82,8 +97,6 @@
 		</script>
 	  </div><!-- /.login-box-body -->	  
     </div><!-- /.login-box -->
-	
-
     <!-- jQuery 2.1.4 -->
     <script src="cpro/plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <!-- Bootstrap 3.3.2 JS -->

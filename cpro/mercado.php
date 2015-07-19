@@ -35,7 +35,8 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body class="skin-blue sidebar-mini sidebar-collapse">
+  <body class="skin-blue sidebar-mini">
+  <?php include_once("php/analyticstracking.php") ?>
     <div class="wrapper">
 
       <header class="main-header">
@@ -43,7 +44,7 @@
         <!-- Logo -->
         <a href="index.php" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>C</b>PRO</span>
+          <span class="logo-mini"><img src ="dist/img/prologo.png" width="45px" height="25px"/></span>
           <!-- logo for regular state and mobile devices -->
           <span class="logo-lg"><b>Cartola</b>PRO</span>
         </a>
@@ -296,10 +297,10 @@
                 <i class="fa fa-book"></i> <span>Opções</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="index.php"><i class="fa fa-circle-o"></i> Mercado</a></li>
+                <li class="active"><a href="mercado.php"><i class="fa fa-circle-o"></i> Mercado</a></li>
               </ul>
 			  <ul class="treeview-menu">
-                <li><a href="time.php"><i class="fa fa-circle-o"></i> Meu time</a></li>
+                <li><a href="index.php"><i class="fa fa-circle-o"></i> Meu time</a></li>
               </ul>
             </li>            
           </ul>
@@ -327,6 +328,62 @@
           <div class="box">
             <div class="box-header with-border">
               <h2 class="box-title"><strong>  Resumo do mercado de jogadores</strong></h2>
+			  <br />
+				<center>					
+                        <legend>Filtro de jogadores</legend>
+
+                        <select name="status" id="status-lista">
+                            <option value="">Status</option>
+                                    <option value="4">Barrado</option>
+                                    <option value="5">Contundido</option>
+                                    <option value="2">Dúvida</option>
+                                    <option value="7" selected="">Provável</option>
+                                    <option value="3">Suspenso</option>
+                                    <option value="8">Vendido</option>
+                        </select>
+
+                        <select name="posicao" id="posicao-lista">                           
+                                <option value="5">Atacante</option>
+                                <option value="1">Goleiro</option>
+                                <option value="2">Lateral</option>
+                                <option value="4">Meia</option>
+                                <option value="6">Técnico</option>
+                                <option value="3">Zagueiro</option>
+                        </select>
+
+                        <select name="time" id="time-lista">
+                            <option value="">Time</option>
+                                <option value="282">Atlético-MG</option>
+                                <option value="293">Atlético-PR</option>
+                                <option value="314">Avaí</option>
+                                <option value="315">Chapecoense</option>
+                                <option value="264">Corinthians</option>
+                                <option value="294">Coritiba</option>
+                                <option value="283">Cruzeiro</option>
+                                <option value="316">Figueirense</option>
+                                <option value="262">Flamengo</option>
+                                <option value="266">Fluminense</option>
+                                <option value="290">Goiás</option>
+                                <option value="284">Grêmio</option>
+                                <option value="285">Internacional</option>
+                                <option value="317">Joinville</option>
+                                <option value="275">Palmeiras</option>
+                                <option value="303">Ponte Preta</option>
+                                <option value="277">Santos</option>
+                                <option value="276">São Paulo</option>
+                                <option value="292">Sport</option>
+                                <option value="267">Vasco</option>
+                        </select>
+
+                        <select name="faixa_preco" id="faixa-lista">
+                            <option value="">Faixa de preço</option>
+                            <option value="faixa1">0 a 5</option>
+                            <option value="faixa2">5 a 10</option>
+                            <option value="faixa3">10 a 15</option>
+                            <option value="faixa4">15 a 20</option>
+                            <option value="faixa5">Maior que 20</option>
+                        </select>
+				</center>
               <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
                 <!--<button class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>-->
@@ -347,9 +404,9 @@
 
 	<footer class="main-footer">
         <div class="pull-right hidden-xs">
-          <b>Email: </b> MARCUS_VINICIUS_CAMPOS@HOTMAIL.COM
+          <!--<b>Email: </b> MARCUS_VINICIUS_CAMPOS@HOTMAIL.COM-->
         </div>
-        <strong>CartolaPRO V.0.1.0 - Desenvolvido por <a href="#">Marcus Vinícius Campos</a>.</strong>
+        <strong>CartolaPRO V.0.2.12 - Desenvolvido por <a href="#">Marcus Vinícius Campos</a>.</strong>
     </footer>     
     </div><!-- ./wrapper -->
 
@@ -382,7 +439,7 @@
     <script src="dist/js/demo.js" type="text/javascript"></script>
 	
 	
-	<script src="dist/js/jscript.js" type="text/javascript"></script>
+	<script src="dist/js/jscript20151907.js" type="text/javascript"></script>
     
   </body>
 </html>

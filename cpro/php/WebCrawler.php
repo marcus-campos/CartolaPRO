@@ -61,9 +61,23 @@ class WebCrawler {
 					<tbody>  
 
 			<?php
+			$status = "";
+			$posicao = "";
+			$time = "";
+			$faixa = "";
+			
+			if(isset($_GET['status']))
+				$status = $_GET['status'];
+			if(isset($_GET['posicao']))
+				$posicaoCampo = $_GET['posicao'];
+			if(isset($_GET['time']))
+				$time = $_GET['time'];
+			if(isset($_GET['faixa']))
+				$faixa = $_GET['faixa'];
+			
 			for($x = 1; $x <= 41; $x++)
 			{
-				curl_setopt($ch, CURLOPT_URL, "http://cartolafc.globo.com/mercado/filtrar.json?page=$x"); //Pagina com filtro de jogadores
+				curl_setopt($ch, CURLOPT_URL, "http://cartolafc.globo.com/mercado/filtrar.json?page=$x&order_by=preco&status_id=$status&posicao_id=$posicaoCampo&clube_id=$time&faixa_preco=$faixa"); //Pagina com filtro de jogadores
 				$json = curl_exec($ch);
 				$jsonObj = json_decode($json);
 				$atleta = $jsonObj->atleta;

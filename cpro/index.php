@@ -34,7 +34,7 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body class="skin-blue sidebar-mini sidebar-collapse">
+  <body class="skin-blue sidebar-mini">
   <?php include_once("php/analyticstracking.php") ?>
     <div class="wrapper">
 
@@ -291,10 +291,10 @@
                 <i class="fa fa-book"></i> <span>Opções</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
 			  <ul class="treeview-menu">
-                <li class="active"><a href="time.php"><i class="fa fa-circle-o"></i> Meu time</a></li>
+                <li class="active"><a href="index.php"><i class="fa fa-circle-o"></i> Meu time</a></li>
               </ul>
               <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> Mercado - Em Breve</a></li>
+                <li><a href="mercado.php"><i class="fa fa-circle-o"></i> Mercado</a></li>
               </ul>			  
             </li>            
           </ul>
@@ -364,7 +364,7 @@
         <!--<div class="pull-right hidden-xs">
           <b>Email: </b> MARCUS_VINICIUS_CAMPOS@HOTMAIL.COM
         </div>-->
-        <strong>CartolaPRO V.0.1.0 - Desenvolvido por <a href="https://github.com/marcus210">Marcus Campos</a>.</strong>
+        <strong>CartolaPRO V.0.2.12 - Desenvolvido por <a href="https://github.com/marcus210">Marcus Campos</a>.</strong>
     </footer>     
     </div><!-- ./wrapper -->
 
@@ -409,7 +409,7 @@
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js" type="text/javascript"></script>
 	
-	<script src="dist/js/jscript.js" type="text/javascript"></script>
+	<script src="dist/js/jscript20151907.js" type="text/javascript"></script>
     
   </body>
 </html>

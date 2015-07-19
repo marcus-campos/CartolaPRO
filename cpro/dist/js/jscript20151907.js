@@ -1,3 +1,7 @@
+$('#modal-index').click(function() {
+	$('#myModal').modal('show');
+});	
+
 if ($('#mercado_jogadores').length > 0) {
 	
 	getMercadoPlayers();

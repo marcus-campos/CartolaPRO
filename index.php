@@ -58,19 +58,14 @@
           <div class="form-group has-feedback">
             <input type="password" name="senha" class="form-control" placeholder="Senha"/>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-          </div>
-          <div class="row">
-            <div class="col-xs-8">    
-                                  
-            </div><!-- /.col -->
-            <div class="col-xs-4">              
-              <button type="submit" name="entrar" class="btn btn-primary btn-block btn-flat">Entrar</button>
-            </div><!-- /.col -->
-          </div>
+          </div>        
+		    <button type="submit" name="entrar" class="btn btn-primary btn-block btn-flat">Entrar</button>
+			<button type="button" name="modal-index" id ="modal-index" class="btn btn-primary btn-block btn-flat">Como usar o Cartola PRO?</button>
         </form> 
 		<br />
 		<p class="login-box-msg">Atenção!!! Não armazenamos suas credenciais de acesso ao CartolaFC em nossos servidores.</p>
     <p class="login-box-msg">Para se registrar no CartolaFC acesse o site globo.com ou<a href="https://login.globo.com/cadastro/4728?tam=widget&url=https%3A%2F%2Fintervencao.globo.com%2Fintervencoes%2Fshow.do%3Fpopin%3Dtrue%26servicoId%3D4728%26urlIntervencao%3Dhttp%3A%2F%2Fs.glbimg.com%2Fgl%2Fba%2Fbarra-globocom.callback.html%2523http%253A%252F%252Fgloboesporte.globo.com%252Fcartola-fc%252F"> clique aqui.</a></p>
+	
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -80,11 +75,31 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
     <center>        
+		<div class="fb-like"></div>
         <div class="fb-share-button" data-href="http://cartolapro.com.br/" data-layout="button_count"></div>
-        <div class="fb-send" data-href="http://cartolapro.com.br/"></div>
-        <div class="fb-like"></div>
+        <div class="fb-send" data-href="http://cartolapro.com.br/"></div>        
     </center>
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	
+	
+		<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Como usar o CartolaPRO?</h4>
+   		    </div>
+			<iframe width="600" height="500" src="https://www.youtube.com/embed/K5yH11Y3Cx4" allowfullscreen></iframe>
+			<center><a href="http://youtu.be/K5yH11Y3Cx4"><h4><strong>Clique aqui para ver no YouTube</strong></h4></a></center>
+			
+			<script src="https://apis.google.com/js/platform.js"></script>
+			<center><div class="g-ytsubscribe" data-channelid="UCdZ_h5tGET0QJWyo1oPtthA" data-layout="full" data-count="default"></div></center>
+			<br />
+		</div>
+	  </div>
+	</div>
+	
+    <!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
 
 		<!-- CartolaPRO -->
 		<ins class="adsbygoogle"
@@ -103,6 +118,10 @@
     <script src="cpro/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <!-- iCheck -->
     <script src="cpro/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+	
+	<script src="cpro/dist/js/jscript20151907.js" type="text/javascript"></script>
+	
+	
     <script>
       $(function () {
         $('input').iCheck({

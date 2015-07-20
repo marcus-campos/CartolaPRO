@@ -1,5 +1,9 @@
 <?php
 	session_start();
+	
+	require_once 'php/initial/global.php';
+	$globalIni = new GlobalIni();
+	
 	if(!(isset($_SESSION['login']) && $_SESSION['login'] != NULL && $_SESSION['senha'] && $_SESSION['senha'] != NULL))
 	{
 		header("Location: ../");	
@@ -409,7 +413,7 @@
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js" type="text/javascript"></script>
 	
-	<script src="dist/js/jscript20151907.js" type="text/javascript"></script>
+	<?="<script src=\"dist/js/$globalIni->jscriptName\" type=\"text/javascript\"></script>"?>
     
   </body>
 </html>

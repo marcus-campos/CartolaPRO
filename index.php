@@ -1,5 +1,7 @@
 <?php
 	session_start();
+	require_once 'cpro/php/initial/global.php';
+	$globalIni = new GlobalIni();
 	
 	if(isset($_SESSION['login']) && $_SESSION['login'] != NULL && $_SESSION['senha'] && $_SESSION['senha'] != NULL)
 	{
@@ -119,7 +121,8 @@
     <!-- iCheck -->
     <script src="cpro/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
 	
-	<script src="cpro/dist/js/jscript20151907.js" type="text/javascript"></script>
+	<?="<script src=\"cpro/dist/js/$globalIni->jscriptName\" type=\"text/javascript\"></script>"?>
+	
 	
 	
     <script>
